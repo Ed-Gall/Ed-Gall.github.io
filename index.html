@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CineCritique | Críticas Minimalistas de Cinema</title>
+    <title>Edward's Insight | Críticas e Análises</title>
     <style>
         /* Reset e Variáveis de Cor */
         * {
@@ -11,6 +11,10 @@
             padding: 0;
             box-sizing: border-box;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth; /* Rolagem suave para as âncoras do menu */
         }
 
         :root {
@@ -45,16 +49,22 @@
             border-bottom: 1px solid var(--borda);
             position: sticky;
             top: 0;
-            background-color: rgba(10, 10, 12, 0.8);
+            background-color: rgba(10, 10, 12, 0.85);
             backdrop-filter: blur(12px);
             z-index: 100;
+            padding: 0.5rem 0;
         }
 
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 70px;
+            min-height: 70px;
+        }
+
+        .header-brand {
+            display: flex;
+            flex-direction: column;
         }
 
         .logo {
@@ -66,6 +76,13 @@
 
         .logo span {
             color: var(--sotaque);
+        }
+
+        .citacao {
+            font-size: 0.75rem;
+            color: var(--texto-secundario);
+            font-style: italic;
+            margin-top: 0.2rem;
         }
 
         .menu {
@@ -151,9 +168,10 @@
             opacity: 0.9;
         }
 
-        /* Grid de Críticas Recentes */
-        .criticas-secao {
+        /* Grid de Avaliações */
+        .secao-conteudo {
             padding: 4rem 0;
+            border-bottom: 1px solid var(--borda);
         }
 
         .secao-titulo {
@@ -172,7 +190,6 @@
         .card {
             display: flex;
             flex-direction: column;
-            group-hover
         }
 
         .card-img {
@@ -197,9 +214,54 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Seção Sobre Mim */
+        .sobre-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .perfil-img {
+            width: 100%;
+            height: 300px;
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid var(--borda);
+        }
+
+        .sobre-texto {
+            color: var(--texto-secundario);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .redes-sociais {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-social {
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--borda);
+            color: var(--texto-principal);
+            background-color: transparent;
+            transition: all 0.2s ease;
+        }
+
+        .btn-social:hover {
+            background-color: var(--texto-principal);
+            color: var(--bg-principal);
+        }
+
         /* Rodapé */
         footer {
-            border-top: 1px solid var(--borda);
             padding: 3rem 0;
             text-align: center;
             font-size: 0.85rem;
@@ -208,7 +270,7 @@
 
         /* Responsividade */
         @media (max-width: 768px) {
-            .hero-grid {
+            .hero-grid, .sobre-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
@@ -216,11 +278,20 @@
                 height: 300px;
                 order: -1;
             }
+            .perfil-img {
+                height: 300px;
+                max-width: 300px;
+                margin: 0 auto;
+            }
             .hero-titulo {
                 font-size: 2rem;
             }
             .menu {
-                display: none; /* Simplificação para mobile */
+                display: none; /* Em um projeto real, aqui entraria um menu hambúrguer */
+            }
+            .nav-container {
+                justify-content: center;
+                text-align: center;
             }
         }
     </style>
@@ -230,12 +301,15 @@
     <!-- CABEÇALHO -->
     <header>
         <div class="container nav-container">
-            <a href="#" class="logo">Cine<span>.</span>Critique</a>
+            <div class="header-brand">
+                <a href="#" class="logo">Edward's <span>Insight</span></a>
+                <span class="citacao">"O mundo mente quando ouve falar de esperança"</span>
+            </div>
             <nav class="menu">
-                <a href="#">Críticas</a>
-                <a href="#">Listas</a>
-                <a href="#">Festivais</a>
-                <a href="#">Sobre</a>
+                <a href="#filmes">Filme</a>
+                <a href="#series">Série</a>
+                <a href="#livros">Livro</a>
+                <a href="#quem-sou-eu">Quem eu sou</a>
             </nav>
         </div>
     </header>
@@ -244,29 +318,29 @@
     <section class="container hero">
         <div class="hero-grid">
             <div>
-                <span class="tag">Crítica em Destaque</span>
+                <span class="tag">Filme em Destaque</span>
                 <h1 class="hero-titulo">Duna: Parte Dois e a consolidação do épico moderno</h1>
                 <div class="meta">
-                    <span>14 de Março, 2026</span> • Por Bruno Silva • <span class="nota">★ 9.5/10</span>
+                    <span>14 de Março, 2026</span> • Por Edward • <span class="nota">★ 9.5/10</span>
                 </div>
                 <p class="hero-resumo">Denis Villeneuve entrega uma obra-prima visual que expande o universo de Frank Herbert com maturidade política, design de som avassalador e atuações que definem carreiras.</p>
-                <a href="#" class="btn">Ler Crítica Completa</a>
+                <a href="#" class="btn">Ler Análise Completa</a>
             </div>
-            <!-- Imagem de exemplo em cinza escuro (você pode substituir pela URL da foto do filme) -->
-            <div style="background: #18181b url('https://unsplash.com') center/cover;" class="hero-img"></div>
+            <!-- Substitua o URL abaixo pela imagem desejada -->
+            <div style="background: #18181b url('https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=1000&auto=format&fit=crop') center/cover;" class="hero-img"></div>
         </div>
     </section>
 
-    <!-- CRÍTICAS RECENTES -->
-    <main class="container criticas-secao">
-        <h2 class="secao-titulo">Críticas Recentes</h2>
+    <!-- ÚLTIMAS PUBLICAÇÕES -->
+    <main class="container secao-conteudo">
+        <h2 class="secao-titulo">Últimas Publicações</h2>
         
         <div class="grid-criticas">
             <!-- Card 1 -->
             <article class="card">
                 <a href="#">
-                    <div style="background: #18181b url('https://unsplash.com') center/cover;" class="card-img"></div>
-                    <span class="tag">Crítica</span>
+                    <div style="background: #18181b url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=800&auto=format&fit=crop') center/cover;" class="card-img"></div>
+                    <span class="tag">Filme</span>
                     <h3 class="card-titulo">Anatomia de uma Queda e a ambiguidade do real</h3>
                     <div class="meta">Nota: <span class="nota">★ 9.0</span></div>
                 </a>
@@ -275,29 +349,54 @@
             <!-- Card 2 -->
             <article class="card">
                 <a href="#">
-                    <div style="background: #18181b url('https://unsplash.com') center/cover;" class="card-img"></div>
-                    <span class="tag">Crítica</span>
-                    <h3 class="card-titulo">Pobres Criaturas: O maximalismo bizarro de Lanthimos</h3>
-                    <div class="meta">Nota: <span class="nota">★ 8.5</span></div>
+                    <div style="background: #18181b url('https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=800&auto=format&fit=crop') center/cover;" class="card-img"></div>
+                    <span class="tag">Série</span>
+                    <h3 class="card-titulo">O Urso (The Bear): O caos perfeito na cozinha</h3>
+                    <div class="meta">Nota: <span class="nota">★ 9.5</span></div>
                 </a>
             </article>
 
             <!-- Card 3 -->
             <article class="card">
                 <a href="#">
-                    <div style="background: #18181b url('https://unsplash.com') center/cover;" class="card-img"></div>
-                    <span class="tag">Retrô</span>
-                    <h3 class="card-titulo">Blade Runner 2049: O silêncio que diz tudo</h3>
+                    <div style="background: #18181b url('https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=800&auto=format&fit=crop') center/cover;" class="card-img"></div>
+                    <span class="tag">Livro</span>
+                    <h3 class="card-titulo">1984 de George Orwell: Uma releitura necessária</h3>
                     <div class="meta">Nota: <span class="nota">★ 10/10</span></div>
                 </a>
             </article>
         </div>
     </main>
 
+    <!-- QUEM EU SOU -->
+    <section id="quem-sou-eu" class="container secao-conteudo" style="border-bottom: none;">
+        <h2 class="secao-titulo">Quem eu sou</h2>
+        
+        <div class="sobre-grid">
+            <!-- Insira a URL da sua foto no background abaixo -->
+            <div style="background: #18181b url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop') center/cover;" class="perfil-img"></div>
+            
+            <div class="sobre-conteudo">
+                <p class="sobre-texto">
+                    [Escreva aqui a sua sinopse. Este é o espaço perfeito para contar um pouco sobre sua trajetória, o que motiva suas críticas, seus gêneros favoritos na literatura, nos cinemas e nos videogames. Você pode usar este espaço para se conectar intimamente com seu leitor e explicar a filosofia por trás da citação "O mundo mente quando ouve falar de esperança".]
+                </p>
+                <p class="sobre-texto">
+                    [Você pode adicionar um segundo parágrafo aqui para separar as ideias, focando em como você organiza suas leituras e assiste aos filmes antes de analisá-los no blog.]
+                </p>
+                
+                <div class="redes-sociais">
+                    <a href="URL_DO_SEU_OPENLIBRARY" target="_blank" class="btn-social">OpenLibrary</a>
+                    <a href="URL_DO_SEU_LETTERBOXD" target="_blank" class="btn-social">Letterboxd</a>
+                    <a href="URL_DO_SEU_BACKLOGGD" target="_blank" class="btn-social">Backloggd</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- RODAPÉ -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 CineCritique. Feito para os amantes da sétima arte.</p>
+            <p>&copy; 2026 Edward's Insight. Feito para os amantes da arte.</p>
         </div>
     </footer>
 
