@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todas as Publicações | Edward's Insight</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="feed-page">
+
+    <header>
+        <div class="container nav-container">
+            <div class="header-brand">
+                <a href="index.html" class="logo">Edward's <span>Insight</span></a>
+                <span class="citacao">"O mundo mente quando ouve falar de esperança"</span>
+            </div>
+            <nav class="menu">
+                <a href="index.html#filmes">Filme</a>
+                <a href="index.html#series">Série</a>
+                <a href="index.html#livros">Livro</a>
+                <a href="index.html#quem-sou-eu">Quem eu sou</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Abrir Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="container secao-conteudo">
+        <div class="secao-header">
+            <h2 class="secao-titulo">Todas as Publicações</h2>
+            <a href="index.html" class="secao-link">← Voltar ao Início</a>
+        </div>
+        
+        <div class="grid-criticas">
+            <article class="card">
+                <a href="artigos/it-serie.html">
+                    <div class="card-img" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFKUwnUkqNeAth1HgjTE02t_tDlfTXIJB0loju9uPDyCNITVh2ySRMK10zmA19sbYZz03EWnmIUHeQOFtm_yA51IrLAlcfj9njVxH4b0obHz_Ozd2uHpbK78REOrAnr-iMw5kouBTcJn1EtJ16XWh7wxf2cvPBUgOrG4vjLDAB_hctxl1NTqbbFlYAZB8S/s1600/1000033085.jpg');">
+                        <span class="card-tag">Livro</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-titulo">It: A Coisa; ou Medo e Nossa Pequena Luz no Cosmos</h3>
+                        <p class="card-resumo">Uma análise sobre o melhor livro do Stephen King.</p>
+                        <div class="card-footer">
+                            <span class="nota">★ 8.0</span>
+                            <span class="card-data">21 Jan 2026</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+
+            <article class="card">
+                <a href="#">
+                    <div class="card-img" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFDnD8z67GGnF-s6hKpj_prEW8hQm7ewB-X1jtVSBGwHzGWJQbJ6jT2U1hAUmMNIXkS3K8GuqwLOHyX2R-pKJ4xU77IoP63W0wJTDqHqoehyb1eLx3AXzcw4Y2yngd91Ul8_TxpV7jS0K-itjn5jR6amAvORm_9KVlvcJJZdZ10aA51wvpXo13y38NTB_N/s1536/1000198270.png');">
+                        <span class="card-tag">Livro</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-titulo">O Horror em Amarelo</h3>
+                        <p class="card-resumo">Há exatamente um ano, eu fui amaldiçoado.</p>
+                        <div class="card-footer">
+                            <span class="nota">★ 10</span>
+                            <span class="card-data">19 Out 2025</span>
+                        </div>
+                    </div>
+                </a>
+            </article>
+        </div> <!-- Faltava fechar a div.grid-criticas -->
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Edward's Insight. Feito para os amantes da arte.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.menu-toggle')?.addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
