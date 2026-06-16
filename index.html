@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineCritique | Críticas Minimalistas de Cinema</title>
+    <style>
+        /* Reset e Variáveis de Cor */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        :root {
+            --bg-principal: #0a0a0c;
+            --bg-card: #121215;
+            --texto-principal: #f3f4f6;
+            --texto-secundario: #a1a1aa;
+            --sotaque: #e11d48; /* Tom de vermelho moderno */
+            --borda: #27272a;
+        }
+
+        body {
+            background-color: var(--bg-principal);
+            color: var(--texto-principal);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Layout Global */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Cabeçalho */
+        header {
+            border-bottom: 1px solid var(--borda);
+            position: sticky;
+            top: 0;
+            background-color: rgba(10, 10, 12, 0.8);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--sotaque);
+        }
+
+        .menu {
+            display: flex;
+            gap: 2rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--texto-secundario);
+        }
+
+        .menu a:hover {
+            color: var(--texto-principal);
+            transition: color 0.2s ease;
+        }
+
+        /* Destaque Principal (Hero) */
+        .hero {
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--borda);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(135deg, #27272a, #0a0a0c);
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--sotaque);
+            margin-bottom: 1rem;
+        }
+
+        .hero-titulo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .meta {
+            font-size: 0.85rem;
+            color: var(--texto-secundario);
+            margin-bottom: 1.5rem;
+        }
+
+        .nota {
+            font-weight: 700;
+            color: #fbbf24; /* Amarelo para nota */
+        }
+
+        .hero-resumo {
+            color: var(--texto-secundario);
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--texto-principal);
+            color: var(--bg-principal);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Grid de Críticas Recentes */
+        .criticas-secao {
+            padding: 4rem 0;
+        }
+
+        .secao-titulo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .grid-criticas {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            group-hover
+        }
+
+        .card-img {
+            width: 100%;
+            height: 220px;
+            background-color: var(--bg-card);
+            border-radius: 6px;
+            object-fit: cover;
+            margin-bottom: 1.25rem;
+            border: 1px solid var(--borda);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-img {
+            transform: translateY(-4px);
+        }
+
+        .card-titulo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Rodapé */
+        footer {
+            border-top: 1px solid var(--borda);
+            padding: 3rem 0;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--texto-secundario);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .hero-img {
+                height: 300px;
+                order: -1;
+            }
+            .hero-titulo {
+                font-size: 2rem;
+            }
+            .menu {
+                display: none; /* Simplificação para mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">Cine<span>.</span>Critique</a>
+            <nav class="menu">
+                <a href="#">Críticas</a>
+                <a href="#">Listas</a>
+                <a href="#">Festivais</a>
+                <a href="#">Sobre</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- DESTAQUE PRINCIPAL -->
+    <section class="container hero">
+        <div class="hero-grid">
+            <div>
+                <span class="tag">Crítica em Destaque</span>
+                <h1 class="hero-titulo">Duna: Parte Dois e a consolidação do épico moderno</h1>
+                <div class="meta">
+                    <span>14 de Março, 2026</span> • Por Bruno Silva • <span class="nota">★ 9.5/10</span>
+                </div>
+                <p class="hero-resumo">Denis Villeneuve entrega uma obra-prima visual que expande o universo de Frank Herbert com maturidade política, design de som avassalador e atuações que definem carreiras.</p>
+                <a href="#" class="btn">Ler Crítica Completa</a>
+            </div>
+            <!-- Imagem de exemplo em cinza escuro (você pode substituir pela URL da foto do filme) -->
+            <div style="background: #18181b url('https://unsplash.com') center/cover;" class="hero-img"></div>
+        </div>
+    </section>
+
+    <!-- CRÍTICAS RECENTES -->
+    <main class="container criticas-secao">
+        <h2 class="secao-titulo">Críticas Recentes</h2>
+        
+        <div class="grid-criticas">
+            <!-- Card 1 -->
+            <article class="card">
+                <a href="#">
+                    <div style="background: #18181b url('https://unsplash.com') center/cover;" class="card-img"></div>
+                    <span class="tag">Crítica</span>
+                    <h3 class="card-titulo">Anatomia de uma Queda e a ambiguidade do real</h3>
+                    <div class="meta">Nota: <span class="nota">★ 9.0</span></div>
+                </a>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+                <a href="#">
+                    <div style="background: #18181b url('https://unsplash.com') center/cover;" class="card-img"></div>
+                    <span class="tag">Crítica</span>
+                    <h3 class="card-titulo">Pobres Criaturas: O maximalismo bizarro de Lanthimos</h3>
+                    <div class="meta">Nota: <span class="nota">★ 8.5</span></div>
+                </a>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+                <a href="#">
+                    <div style="background: #18181b url('https://unsplash.com') center/cover;" class="card-img"></div>
+                    <span class="tag">Retrô</span>
+                    <h3 class="card-titulo">Blade Runner 2049: O silêncio que diz tudo</h3>
+                    <div class="meta">Nota: <span class="nota">★ 10/10</span></div>
+                </a>
+            </article>
+        </div>
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 CineCritique. Feito para os amantes da sétima arte.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
