@@ -18,9 +18,9 @@
                 <span class="citacao">"O mundo mente quando ouve falar de esperança"</span>
             </div>
             <nav class="menu">
-                <a href="index.html#filmes">Filme</a>
-                <a href="index.html#series">Série</a>
-                <a href="index.html#livros">Livro</a>
+                <a href="publicacoes.html?tag=filme">Filme</a>
+                <a href="publicacoes.html?tag=serie">Série</a>
+                <a href="publicacoes.html?tag=livro">Livro</a>
                 <a href="index.html#quem-sou-eu">Quem eu sou</a>
             </nav>
             <button class="menu-toggle" aria-label="Abrir Menu">
@@ -38,7 +38,8 @@
         </div>
         
         <div class="grid-criticas">
-            <article class="card">
+            
+            <article class="card" data-tag="livro">
                 <a href="artigos/it-serie.html">
                     <div class="card-img" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFKUwnUkqNeAth1HgjTE02t_tDlfTXIJB0loju9uPDyCNITVh2ySRMK10zmA19sbYZz03EWnmIUHeQOFtm_yA51IrLAlcfj9njVxH4b0obHz_Ozd2uHpbK78REOrAnr-iMw5kouBTcJn1EtJ16XWh7wxf2cvPBUgOrG4vjLDAB_hctxl1NTqbbFlYAZB8S/s1600/1000033085.jpg');">
                         <span class="card-tag">Livro</span>
@@ -47,15 +48,15 @@
                         <h3 class="card-titulo">It: A Coisa; ou Medo e Nossa Pequena Luz no Cosmos</h3>
                         <p class="card-resumo">Uma análise sobre o melhor livro do Stephen King.</p>
                         <div class="card-footer">
-                            <span class="nota">★ 8.0</span>
+                            <span class="nota">★ 10/10</span>
                             <span class="card-data">21 Jan 2026</span>
                         </div>
                     </div>
                 </a>
             </article>
 
-            <article class="card">
-                <a href="#">
+            <article class="card" data-tag="livro">
+                <a href="artigos/horror-em-amarelo.html">
                     <div class="card-img" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFDnD8z67GGnF-s6hKpj_prEW8hQm7ewB-X1jtVSBGwHzGWJQbJ6jT2U1hAUmMNIXkS3K8GuqwLOHyX2R-pKJ4xU77IoP63W0wJTDqHqoehyb1eLx3AXzcw4Y2yngd91Ul8_TxpV7jS0K-itjn5jR6amAvORm_9KVlvcJJZdZ10aA51wvpXo13y38NTB_N/s1536/1000198270.png');">
                         <span class="card-tag">Livro</span>
                     </div>
@@ -63,12 +64,13 @@
                         <h3 class="card-titulo">O Horror em Amarelo</h3>
                         <p class="card-resumo">Há exatamente um ano, eu fui amaldiçoado.</p>
                         <div class="card-footer">
-                            <span class="nota">★ 10</span>
+                            <span class="nota">★ 10/10</span>
                             <span class="card-data">19 Out 2025</span>
                         </div>
                     </div>
                 </a>
             </article>
+
         </div> 
     </main>
 
@@ -79,8 +81,49 @@
     </footer>
 
     <script>
+        // Menu mobile toggle simples
         document.querySelector('.menu-toggle')?.addEventListener('click', function() {
             document.querySelector('.menu').classList.toggle('active');
+        });
+
+        // ==========================================
+        // SISTEMA DE FILTRO POR TAGS
+        // ==========================================
+        window.addEventListener('DOMContentLoaded', () => {
+            // Pega o parâmetro '?tag=' da URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const tagFiltro = urlParams.get('tag');
+
+            if (tagFiltro) {
+                // Atualiza o título da página para mostrar o que está sendo filtrado
+                const titulo = document.querySelector('.secao-titulo');
+                // Coloca a primeira letra maiúscula (ex: "Livro")
+                const tagFormatada = tagFiltro.charAt(0).toUpperCase() + tagFiltro.slice(1);
+                
+                // Trata o plural dependendo da tag
+                let plural = tagFiltro === 'filme' || tagFiltro === 'livro' ? 's' : '';
+                titulo.textContent = `Publicações: ${tagFormatada}${plural}`;
+
+                // Pega todos os cards e esconde os que não batem com a tag
+                const cards = document.querySelectorAll('.card');
+                let encontrouResultados = false;
+
+                cards.forEach(card => {
+                    if (card.getAttribute('data-tag') === tagFiltro) {
+                        card.style.display = 'block'; // Mostra
+                        encontrouResultados = true;
+                    } else {
+                        card.style.display = 'none'; // Esconde
+                    }
+                });
+
+                // Se não tiver nenhum artigo daquela tag, mostra uma mensagem elegante
+                if (!encontrouResultados) {
+                    const grid = document.querySelector('.grid-criticas');
+                    grid.style.display = 'block'; // Tira o grid temporariamente para a mensagem não ficar espremida
+                    grid.innerHTML = `<p style="color: var(--texto-secundario); font-size: 1.1rem; text-align: center; padding: 3rem 0;">Ainda não há publicações nesta categoria. Volte em breve!</p>`;
+                }
+            }
         });
     </script>
 </body>
