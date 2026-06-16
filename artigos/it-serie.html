@@ -1,0 +1,231 @@
+<!-- horror-em-amarelo.html - Versão Corrigida -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Horror em Amarelo | Edward's Insight</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        .artigo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* REMOVER O HEADER STICKY */
+        .artigo-page header {
+            position: relative !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            background: var(--bg-principal) !important;
+            border-bottom: 1px solid var(--borda);
+        }
+
+        
+        .artigo-page .artigo-container {
+            padding-top: 2rem;
+        }
+
+        .artigo-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .artigo-titulo {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+        }
+
+        .artigo-capa {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            border: 1px solid var(--borda);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .artigo-capa::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 60%, rgba(10, 10, 12, 0.6));
+        }
+
+        .artigo-corpo {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #d1d5db;
+        }
+
+        .artigo-corpo p {
+            margin-bottom: 1.8rem;
+        }
+
+        .artigo-corpo p:first-of-type::first-letter {
+            font-size: 4rem;
+            float: left;
+            margin-right: 0.5rem;
+            line-height: 1;
+            font-weight: 700;
+            color: var(--sotaque);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .artigo-corpo blockquote {
+            border-left: 4px solid var(--sotaque);
+            padding-left: 1.8rem;
+            margin: 2.5rem 0;
+            font-style: italic;
+            color: var(--texto-secundario);
+            font-size: 1.2rem;
+            background: var(--glass-bg);
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            border-left-width: 4px;
+        }
+
+        .artigo-corpo blockquote::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--sotaque);
+            opacity: 0.3;
+            margin-right: 0.5rem;
+        }
+
+        .artigo-corpo h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .artigo-corpo ul, .artigo-corpo ol {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+            color: var(--texto-secundario);
+        }
+
+        .artigo-corpo li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Botão de voltar melhorado */
+        .artigo-voltar {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--borda);
+            text-align: center;
+        }
+
+        .artigo-voltar .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .artigo-titulo {
+                font-size: 2.2rem;
+            }
+            .artigo-capa {
+                height: 250px;
+            }
+            .artigo-container {
+                padding: 1rem 1rem;
+            }
+            .artigo-page .artigo-container {
+                padding-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="artigo-page">
+
+    <header>
+        <div class="container nav-container">
+            <div class="header-brand">
+                <a href="index.html" class="logo">Edward's <span>Insight</span></a>
+                <span class="citacao">"O mundo mente quando ouve falar de esperança"</span>
+            </div>
+            <nav class="menu">
+                <a href="index.html#filmes">Filme</a>
+                <a href="index.html#series">Série</a>
+                <a href="index.html#livros">Livro</a>
+                <a href="index.html#quem-sou-eu">Quem eu sou</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="artigo-container">
+        <header class="artigo-header">
+            <span class="tag">Livros</span>
+            <h1 class="artigo-titulo">It: A Coisa; ou Medo e Nossa Pequena Luz no Cosmos</h1>
+            <div class="meta">
+                <span>Por Edward</span> • <span>21 de Janeiro, 2026</span> • <span class="nota">★ 8.0/10</span>
+            </div>
+        </header>
+
+        <div class="artigo-capa" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFKUwnUkqNeAth1HgjTE02t_tDlfTXIJB0loju9uPDyCNITVh2ySRMK10zmA19sbYZz03EWnmIUHeQOFtm_yA51IrLAlcfj9njVxH4b0obHz_Ozd2uHpbK78REOrAnr-iMw5kouBTcJn1EtJ16XWh7wxf2cvPBUgOrG4vjLDAB_hctxl1NTqbbFlYAZB8S/s1600/1000033085.jpg');"></div>
+
+        <article class="artigo-corpo">
+            <p>It: A Coisa provavelmente é a melhor obra do mestre Stephen King - pelo menos entre as que eu li, é a que considero a melhor. Influenciado pela série It: Welcome to Derry, surgiu novamente a vontade de reler o livro. Assim, em dezembro de 2025, adentrei mais uma vez em Derry, voltando a lembrar de toda essa jornada. Tendo terminado a leitura, reafirmo que It: A Coisa provavelmente é a melhor obra de Stephen King. São tantos sentimentos ao longo dessa extensa jornada de aproximadamente 1100 páginas que escrever este texto se torna um verdadeiro desafio, pois diversas partes de mim querem conversar sobre os diversos temas que o livro aborda. Entretanto, isso deixaria o texto desnecessariamente longo e confuso.</p>
+
+            <p>Assim, em uma tarde preguiçosa, quando o sol já se escondia no horizonte, banhando o céu de laranja(talvez influenciado pelas queimadas de cana-de-açúcar ou pela poluição das usinas), eu me perguntei o que torna It uma história tão interessante para mim. Bem, existem muitas respostas, mas talvez a que mais me toque seja a forma como Stephen King utiliza o cosmicismo em suas obras para falar sobre como nós somos tão sujos e incríveis quanto os monstros de Lovecraft.</p>
+
+            <blockquote>
+                "O medo é um lugar onde você pode se perder, mas também é onde você pode se encontrar."
+            </blockquote>
+
+            <h2>27 anos antes</h2>
+            <p>
+E é justamente através desse viés que It: A Coisa é uma obra tão fenomenal. Pois, além dos horrores escondidos nos esgotos de Derry, It: A Coisa é, sobretudo, sobre amizade e crescimento. Aos que já leram a obra, percebe-se que A Coisa é a última coisa que dá medo nessa história; os humanos são tão horríveis quanto esse palhaço assassino. É aí que Derry vira o cenário de experimentos de King quanto ao horror que é a própria sociedade. Os diálogos que transpassam a narrativa sempre envolvem essa negligência com a infância, crianças inseridas forçadamente em um mundo muito maior e mais complexo do que aquilo a que estão acostumadas. Sendo forçadas a crescer antes da hora, a encarar que esse esgoto está, na verdade, a céu aberto, espalhando o fedor e a sujeira que nós mesmos produzimos, mas preferimos ignorar. Através dessa condição pestilenta da humanidade, a criatura cósmica se aproveita para tirar vantagem.</p>
+
+            <p>Porém, é aí que existe a divergência das narrativas de King para as de Lovecraft, pois, enquanto Lovecraft se apoia em um profundo niilismo em suas obras, Stephen King enxerga o milagre, ou melhor, a esperança (a luz de Gan), que reside em todos nós.</p>
+
+            <p>
+Os protagonistas de King são pessoas do dia a dia, gente como a gente, inseridas em situações, muitas vezes, banais. Esse tratado quanto à infância, à inocência e à contaminação do mundo adulto se esgueirando em mentes tão jovens é o que torna It: A Coisa uma história tão poderosa. É expor o câncer (A Aranha) pelos olhos da minoria dentro da minoria e, mesmo diante de tamanho horror, encontrar maneiras de escapar da escuridão. O cosmicismo de King enxerga no ser humano um poder fantástico de imaginar, de criar, que nos torna tão poderosos quanto esses seres.</p>
+            
+            <h2>27 anos depois</h2>
+            <p>It: A Coisa talvez não seja a história de um monstro que habita os esgotos, mas de uma cidade inteira que aprende a conviver com eles. Pennywise é apenas a forma que o medo assume (aquilo que se alimenta da imaginação, desse nosso poder); Derry, por sua vez, é o corpo que o abriga. O terror não está na criatura que desperta a cada ciclo, mas na repetição do silêncio, da omissão e da violência cotidiana que permitem que ela exista. Mas, mesmo diante de tamanho horror, a amizade existe, a imaginação existe, e lembrem-se crianças, a magia também existe. Eles derrotam A Coisa quando crianças ao encará-la como adultos; e a matam, de fato, quando adultos, ao reencontrarem em si mesmos aquilo que foram na infância.</p>
+
+            <p>Este texto está acabando; em breve, começará a esquecê-lo. Assim como esquecemos daqueles que foram nossos amigos na infância, das coisas que vivemos juntos, das aventuras e desventuras que pareciam eternas. Mesmo que os nomes se apaguem e as lembranças se tornem difusas, a marca do que fomos nunca desaparece por completo. Há medos que aprendemos a enfrentar, laços que nos ensinaram a existir e uma luz frágil que insiste em resistir, mesmo quando não sabemos mais de onde ela vem (do Outro). Talvez isso seja It: A Coisa, a esperança de que, em algum lugar profundo, aquilo que nos salvou uma vez ainda seja capaz de nos salvar novamente.</p>
+            
+        </article>
+
+        <div class="artigo-voltar">
+            <a href="/home/edgall/Downloads/edwards-insight/index.html" class="btn">← Voltar para o início</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Edward's Insight.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile toggle
+        document.querySelector('.menu-toggle')?.addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>

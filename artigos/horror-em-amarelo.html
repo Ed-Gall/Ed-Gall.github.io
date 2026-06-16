@@ -1,0 +1,242 @@
+<!-- horror-em-amarelo.html - Versão Corrigida -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Horror em Amarelo | Edward's Insight</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        .artigo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* REMOVER O HEADER STICKY */
+        .artigo-page header {
+            position: relative !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            background: var(--bg-principal) !important;
+            border-bottom: 1px solid var(--borda);
+        }
+
+        
+        .artigo-page .artigo-container {
+            padding-top: 2rem;
+        }
+
+        .artigo-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .artigo-titulo {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+        }
+
+        .artigo-capa {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            border: 1px solid var(--borda);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .artigo-capa::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 60%, rgba(10, 10, 12, 0.6));
+        }
+
+        .artigo-corpo {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #d1d5db;
+        }
+
+        .artigo-corpo p {
+            margin-bottom: 1.8rem;
+        }
+
+        .artigo-corpo p:first-of-type::first-letter {
+            font-size: 4rem;
+            float: left;
+            margin-right: 0.5rem;
+            line-height: 1;
+            font-weight: 700;
+            color: var(--sotaque);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .artigo-corpo blockquote {
+            border-left: 4px solid var(--sotaque);
+            padding-left: 1.8rem;
+            margin: 2.5rem 0;
+            font-style: italic;
+            color: var(--texto-secundario);
+            font-size: 1.2rem;
+            background: var(--glass-bg);
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            border-left-width: 4px;
+        }
+
+        .artigo-corpo blockquote::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--sotaque);
+            opacity: 0.3;
+            margin-right: 0.5rem;
+        }
+
+        .artigo-corpo h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .artigo-corpo ul, .artigo-corpo ol {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+            color: var(--texto-secundario);
+        }
+
+        .artigo-corpo li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Botão de voltar melhorado */
+        .artigo-voltar {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--borda);
+            text-align: center;
+        }
+
+        .artigo-voltar .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .artigo-titulo {
+                font-size: 2.2rem;
+            }
+            .artigo-capa {
+                height: 250px;
+            }
+            .artigo-container {
+                padding: 1rem 1rem;
+            }
+            .artigo-page .artigo-container {
+                padding-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="artigo-page">
+
+    <header>
+        <div class="container nav-container">
+            <div class="header-brand">
+                <a href="index.html" class="logo">Edward's <span>Insight</span></a>
+                <span class="citacao">"O mundo mente quando ouve falar de esperança"</span>
+            </div>
+            <nav class="menu">
+                <a href="index.html#filmes">Filme</a>
+                <a href="index.html#series">Série</a>
+                <a href="index.html#livros">Livro</a>
+                <a href="index.html#quem-sou-eu">Quem eu sou</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="artigo-container">
+        <header class="artigo-header">
+            <span class="tag">Livro</span>
+            <h1 class="artigo-titulo">O Horror em Amarelo</h1>
+            <div class="meta">
+                <span>Por Edward</span> • <span>19 de Outubro, 2025</span> • <span class="nota">★ 10/10</span>
+            </div>
+        </header>
+
+        <div class="artigo-capa" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFDnD8z67GGnF-s6hKpj_prEW8hQm7ewB-X1jtVSBGwHzGWJQbJ6jT2U1hAUmMNIXkS3K8GuqwLOHyX2R-pKJ4xU77IoP63W0wJTDqHqoehyb1eLx3AXzcw4Y2yngd91Ul8_TxpV7jS0K-itjn5jR6amAvORm_9KVlvcJJZdZ10aA51wvpXo13y38NTB_N/s1536/1000198270.png');"></div>
+
+        <article class="artigo-corpo">
+        <p><b>Há exatamente um ano, eu fui amaldiçoado.</b> Amaldiçoado pelo símbolo do amarelo, a singela visão daquela forma atraente, de sua cor quente, ao invés de trazer-me alegria, encaminhou-me por caminhos decadentes e pestilentos. Robert Chambers, em 1895, talvez tenha compreendido algo muito além da nossa visão limitada e mundana de uma simples sensação de estarmos diante de algo tão profundamente artístico, transformando-a em uma força cósmica que não tem limites, enquanto continua reinando em Carcosa. The King in Yellow é um livro peculiar. A figura enigmática daquele rei, daquele reino, daquele livro, sempre retornam. Vejo-me enfeitiçado pelos mistérios que se escondem por detrás da máscara pálida. Décadas se passaram e, mesmo em 2025, Robert Chambers continua a lançar pessoas nessa espiral de loucura que é sua obra, a coletânea de contos de O Rei de Amarelo.</p>
+
+        <blockquote>
+                "Lá, uma morte indolor aguarda aquele que não pode mais suportar as tristezas desta vida."
+        </blockquote>
+
+        <h2>Tomo I</h2>
+        <p>Minha primeira experiência com O Rei de Amarelo foi quando um amigo da faculdade me apresentou essa coletânea. Como gosto dos contos de Lovecraft, seria interessante conhecer a obra de Robert Chambers, uma das inspirações para o Cthulhu Mythos. Infelizmente, o livro que ele me emprestou tinha apenas os primeiros quatro tomos (O Reparador de Reputações, A Máscara, Na Travesia do Dragão e O Símbolo Amarelo). Quando terminei de ler, senti uma estranha mistura de incompletude e desapontamento. Esperava encontrar Lovecraft, mas as histórias de Chambers miravam em outro lugar, um lugar que eu não conseguia compreender onde era.</p>
+
+        <p>Mas foi o suficiente. Esse singelo contato com o livro bastou para atiçar minha curiosidade e perturbar minha pobre mente cansada. Com o passar dos meses, as lembranças daquelas páginas retornavam. Eu queria continuar. Queria saber o que havia no Ato II. Queria entender o que Chambers pretendia com essa coletânea. E aqui estamos nós. Após ter lido todos os contos, não sinto arrependimento. Chambers concluiu sua maquinação, e eu, agora, compreendo. O amarelo não é apenas uma cor. É um convite. Um sussurro vindo de Carcosa, chamando-me para vestir a máscara pálida e dançar sob as estrelas negras do lago Hali.</p>
+        
+        <p style="text-align: center; font-weight: bold;">
+        Porque, no fim, todos nós acabamos por ouvir o Rei.
+        </p>
+
+        <h2>Tomo II</h2>
+        <p>Ou, melhor dizendo, O Rei de Amarelo, para mim, é sobre o próprio sentido da arte. É sobre como ficção e realidade possuem uma parede extremamente fina. Por mais que queiramos nos firmar em caminhos bem pavimentados, em bases sólidas e objetivos bem definidos, onde imaginamos estar plenamente acordados. Na realidade, toda essa firmeza escapa de nossas mãos em segundos. E então caímos. Percebemos que a base não era sólida o suficiente (talvez nunca será), que, na verdade, os objetivos não são tão claros (se é que são objetivos), e que a estrada é, na realidade, irregular.</p>
+
+        <p>É aí que a arte entra como essa força cósmica que, antes que percebamos, já nos influencia; antes que notemos, suas mãos se entrelaçam em nossos destinos, moldando-nos como seres humanos. Pois é através dessa potência artística que nos reconhecemos como tal.</p>
+
+        <p>Não é o Rei quem enlouquece os homens, somos nós que, ao contemplá-lo, reconhecemos o que sempre fomos. O livro homônimo desse universo é constantemente categorizado como essa obra artística suprema. Todos aqueles que o leem enlouquecem. A conversa central é o poder da arte em nós, essa manifestação que pode ser, ao mesmo tempo, bela e grotesca. É no lago onde nossas certezas afundam e de onde emergem novas formas, distorcidas, mas belas. O Rei é inevitável. O belo torna-se insuportável. E nesse instante, não há retorno.</p>
+
+        <p>Chambers aqui sussurra em nossos ouvidos, em diferentes situações, que a arte é algo tão vasto que beira o divino e, portanto, o louco. A verdade que desafia a consciência humana ao ponto de banhá-la em loucura é a própria realidade, é a guerra, o ódio, a ganância, os amores perdidos, as batalhas não resolvidas. Chambers está subvertendo a própria obra: esse segundo ato abraça a realidade e mostra como, nos atos mais banais e cotidianos, escondem-se horrores que perturbam a mente humana. A sombra do Rei sempre pairará sobre nós.</p>
+
+        <p>A arte está muito além daquilo que colocamos em uma tela ou transformamos em uma melodia. A arte é o tocar, o falar, o ouvir, é o contemplar uma memória de um amor passado. É nesse instante que adentramos Carcosa. Onde realidade e ficção se diluem, tudo perde sentido, e, paradoxalmente, é nesse momento que nos constituímos como seres humanos. É quando arte e realidade se fundem em algo grandioso e, ao mesmo tempo, facilmente desprezível, mas que, de forma imperceptível, guia-nos. Está nos guiando. É o nosso destino. Por isso é impossível escapar da sombra do Rei.</p>
+
+        <h2>Tomo III</h2>
+        <p>Ler O Rei de Amarelo é abrir uma brecha na cortina da realidade e perceber que o tecido que nos separa do desconhecido é mais fino do que gostaríamos de admitir. A história se repete, e as histórias persistem por conta dessa universalidade sentimental que temos ao encarar um livro, uma música, um filme, um jogo, uma pintura e nos reconhecermos ali. A inveja, o desejo, o amor, a religião, a política: tudo em nossas vidas passa por esse filtro.</p>
+
+        <p>Bem, talvez eu tenha enlouquecido. Talvez Hastur esteja sussurrando em meus ouvidos, convidando-me a juntar-me à corte do Rei para o baile de máscaras. A verdade é que eu não entendi O Rei de Amarelo, talvez nunca entenderei. Talvez nem o próprio Chambers tenha compreendido o que fez aqui.</p>
+
+        <p>Não me interessei em tocar em certos simbolismos do amarelo, nem em fatos históricos ou na vida de Chambers. Preferi voltar-me para o que senti: a intenção de Chambers em discutir o propósito da arte como um ser cósmico, algo que abala as bases e nos faz elevar (ou decair) como seres humanos. Em vários momentos, ele brinca com essa fronteira entre realidade e ficção, entre o estar acordado e o sonhar, entre o sacrílego e o sagrado. Essa ambiguidade é o que constitui a mente humana. Talvez, futuramente, eu retorne para mergulhar mais fundo em Hali e discutir as histórias isoladamente. Mas, por agora, estou satisfeito em provar deste fruto, deixo que o eco do lago Hali me acompanhe. E, quando o vento soprar de novo, talvez eu o ouça chamar Camilla... Cassilda...</p>
+        
+        </article>
+
+        <div class="artigo-voltar">
+            <a href="index.html" class="btn">← Voltar para o início</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Edward's Insight. Feito para os amantes da arte.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile toggle
+        document.querySelector('.menu-toggle')?.addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
