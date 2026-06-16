@@ -3,302 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edward's Insight | Críticas e Análises</title>
-    <style>
-        /* Reset e Variáveis de Cor */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth; /* Rolagem suave para as âncoras do menu */
-        }
-
-        :root {
-            --bg-principal: #0a0a0c;
-            --bg-card: #121215;
-            --texto-principal: #f3f4f6;
-            --texto-secundario: #a1a1aa;
-            --sotaque: #e11d48; /* Tom de vermelho moderno */
-            --borda: #27272a;
-        }
-
-        body {
-            background-color: var(--bg-principal);
-            color: var(--texto-principal);
-            line-height: 1.6;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* Layout Global */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Cabeçalho */
-        header {
-            border-bottom: 1px solid var(--borda);
-            position: sticky;
-            top: 0;
-            background-color: rgba(10, 10, 12, 0.85);
-            backdrop-filter: blur(12px);
-            z-index: 100;
-            padding: 0.5rem 0;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            min-height: 70px;
-        }
-
-        .header-brand {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo {
-            font-size: 1.25rem;
-            font-weight: 800;
-            letter-spacing: -0.05em;
-            text-transform: uppercase;
-        }
-
-        .logo span {
-            color: var(--sotaque);
-        }
-
-        .citacao {
-            font-size: 0.75rem;
-            color: var(--texto-secundario);
-            font-style: italic;
-            margin-top: 0.2rem;
-        }
-
-        .menu {
-            display: flex;
-            gap: 2rem;
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--texto-secundario);
-        }
-
-        .menu a:hover {
-            color: var(--texto-principal);
-            transition: color 0.2s ease;
-        }
-
-        /* Destaque Principal (Hero) */
-        .hero {
-            padding: 4rem 0;
-            border-bottom: 1px solid var(--borda);
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .hero-img {
-            width: 100%;
-            height: 450px;
-            background: linear-gradient(135deg, #27272a, #0a0a0c);
-            border-radius: 8px;
-            object-fit: cover;
-        }
-
-        .tag {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--sotaque);
-            margin-bottom: 1rem;
-        }
-
-        .hero-titulo {
-            font-size: 2.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-
-        .meta {
-            font-size: 0.85rem;
-            color: var(--texto-secundario);
-            margin-bottom: 1.5rem;
-        }
-
-        .nota {
-            font-weight: 700;
-            color: #fbbf24; /* Amarelo para nota */
-        }
-
-        .hero-resumo {
-            color: var(--texto-secundario);
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--texto-principal);
-            color: var(--bg-principal);
-            padding: 0.75rem 1.5rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: opacity 0.2s ease;
-        }
-
-        .btn:hover {
-            opacity: 0.9;
-        }
-
-        /* Grid de Avaliações */
-        .secao-conteudo {
-            padding: 4rem 0;
-            border-bottom: 1px solid var(--borda);
-        }
-
-        .secao-titulo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 2.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        .grid-criticas {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .card {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .card-img {
-            width: 100%;
-            height: 220px;
-            background-color: var(--bg-card);
-            border-radius: 6px;
-            object-fit: cover;
-            margin-bottom: 1.25rem;
-            border: 1px solid var(--borda);
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover .card-img {
-            transform: translateY(-4px);
-        }
-
-        .card-titulo {
-            font-size: 1.2rem;
-            font-weight: 600;
-            line-height: 1.4;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Seção Sobre Mim */
-        .sobre-grid {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .perfil-img {
-            width: 100%;
-            height: 300px;
-            background-color: var(--bg-card);
-            border-radius: 8px;
-            object-fit: cover;
-            border: 1px solid var(--borda);
-        }
-
-        .sobre-texto {
-            color: var(--texto-secundario);
-            font-size: 1.05rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-
-        .redes-sociais {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-social {
-            padding: 0.6rem 1.2rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            border: 1px solid var(--borda);
-            color: var(--texto-principal);
-            background-color: transparent;
-            transition: all 0.2s ease;
-        }
-
-        .btn-social:hover {
-            background-color: var(--texto-principal);
-            color: var(--bg-principal);
-        }
-
-        /* Rodapé */
-        footer {
-            padding: 3rem 0;
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--texto-secundario);
-        }
-
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .hero-grid, .sobre-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            .hero-img {
-                height: 300px;
-                order: -1;
-            }
-            .perfil-img {
-                height: 300px;
-                max-width: 300px;
-                margin: 0 auto;
-            }
-            .hero-titulo {
-                font-size: 2rem;
-            }
-            .menu {
-                display: none; /* Em um projeto real, aqui entraria um menu hambúrguer */
-            }
-            .nav-container {
-                justify-content: center;
-                text-align: center;
-            }
-        }
-    </style>
+    <title>Edward's Insight</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- CABEÇALHO -->
     <header>
         <div class="container nav-container">
             <div class="header-brand">
@@ -311,94 +23,84 @@
                 <a href="#livros">Livro</a>
                 <a href="#quem-sou-eu">Quem eu sou</a>
             </nav>
+            <button class="menu-toggle" aria-label="Abrir Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
-    <!-- DESTAQUE PRINCIPAL -->
     <section class="container hero">
         <div class="hero-grid">
             <div>
-                <span class="tag">Filme em Destaque</span>
-                <h1 class="hero-titulo">Duna: Parte Dois e a consolidação do épico moderno</h1>
+                <span class="tag">Destaque</span>
+                <h1 class="hero-titulo">It: A Coisa; ou Medo e Nossa Pequena Luz no Cosmos</h1>
                 <div class="meta">
-                    <span>14 de Março, 2026</span> • Por Edward • <span class="nota">★ 9.5/10</span>
+                    <span>21 de Janeiro, 2026</span> • Por Edward • <span class="nota">★ 8.0/10</span>
                 </div>
-                <p class="hero-resumo">Denis Villeneuve entrega uma obra-prima visual que expande o universo de Frank Herbert com maturidade política, design de som avassalador e atuações que definem carreiras.</p>
-                <a href="#" class="btn">Ler Análise Completa</a>
+                <p class="hero-resumo">It: A Coisa provavelmente é a melhor obra do mestre Stephen King - pelo menos entre as que eu li, é a que considero a melhor.</p>
+                <a href="artigos/it-serie.html" class="btn">Ler Análise Completa →</a>
             </div>
-            <!-- Substitua o URL abaixo pela imagem desejada -->
-            <div style="background: #18181b url('https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=1000&auto=format&fit=crop') center/cover;" class="hero-img"></div>
+            <div class="hero-img-wrapper">
+                <div class="hero-img" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFKUwnUkqNeAth1HgjTE02t_tDlfTXIJB0loju9uPDyCNITVh2ySRMK10zmA19sbYZz03EWnmIUHeQOFtm_yA51IrLAlcfj9njVxH4b0obHz_Ozd2uHpbK78REOrAnr-iMw5kouBTcJn1EtJ16XWh7wxf2cvPBUgOrG4vjLDAB_hctxl1NTqbbFlYAZB8S/s1600/1000033085.jpg');"></div>
+                <div class="hero-img-overlay"></div>
+            </div>
         </div>
     </section>
 
-    <!-- ÚLTIMAS PUBLICAÇÕES -->
     <main class="container secao-conteudo">
-        <h2 class="secao-titulo">Últimas Publicações</h2>
+        <div class="secao-header">
+            <h2 class="secao-titulo">Últimas Publicações</h2>
+            <a href="publicacoes.html" class="secao-link">Ver todas →</a>
+        </div>
         
         <div class="grid-criticas">
-            <!-- Card 1 -->
             <article class="card">
-                <a href="#">
-                    <div style="background: #18181b url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=800&auto=format&fit=crop') center/cover;" class="card-img"></div>
-                    <span class="tag">Filme</span>
-                    <h3 class="card-titulo">Anatomia de uma Queda e a ambiguidade do real</h3>
-                    <div class="meta">Nota: <span class="nota">★ 9.0</span></div>
+                <a href="artigos/horror-em-amarelo.html">
+                    <div class="card-img" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFDnD8z67GGnF-s6hKpj_prEW8hQm7ewB-X1jtVSBGwHzGWJQbJ6jT2U1hAUmMNIXkS3K8GuqwLOHyX2R-pKJ4xU77IoP63W0wJTDqHqoehyb1eLx3AXzcw4Y2yngd91Ul8_TxpV7jS0K-itjn5jR6amAvORm_9KVlvcJJZdZ10aA51wvpXo13y38NTB_N/s1536/1000198270.png');">
+                        <span class="card-tag">Livro</span>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-titulo">O Horror em Amarelo</h3>
+                        <p class="card-resumo">Há exatamente um ano, eu fui amaldiçoado.</p>
+                        <div class="card-footer">
+                            <span class="nota">★ 10</span>
+                            <span class="card-data">19 Out 2025</span>
+                        </div>
+                    </div>
                 </a>
             </article>
+        </div> <!-- Faltava fechar a div.grid-criticas -->
+    </main> <!-- Faltava fechar a tag main -->
 
-            <!-- Card 2 -->
-            <article class="card">
-                <a href="#">
-                    <div style="background: #18181b url('https://images.unsplash.com/photo-1594909122845-11baa439b7bf?q=80&w=800&auto=format&fit=crop') center/cover;" class="card-img"></div>
-                    <span class="tag">Série</span>
-                    <h3 class="card-titulo">O Urso (The Bear): O caos perfeito na cozinha</h3>
-                    <div class="meta">Nota: <span class="nota">★ 9.5</span></div>
-                </a>
-            </article>
-
-            <!-- Card 3 -->
-            <article class="card">
-                <a href="#">
-                    <div style="background: #18181b url('https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=800&auto=format&fit=crop') center/cover;" class="card-img"></div>
-                    <span class="tag">Livro</span>
-                    <h3 class="card-titulo">1984 de George Orwell: Uma releitura necessária</h3>
-                    <div class="meta">Nota: <span class="nota">★ 10/10</span></div>
-                </a>
-            </article>
-        </div>
-    </main>
-
-    <!-- QUEM EU SOU -->
     <section id="quem-sou-eu" class="container secao-conteudo" style="border-bottom: none;">
         <h2 class="secao-titulo">Quem eu sou</h2>
-        
         <div class="sobre-grid">
-            <!-- Insira a URL da sua foto no background abaixo -->
-            <div style="background: #18181b url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop') center/cover;" class="perfil-img"></div>
-            
+            <div class="perfil-img" style="background-image: url('https://pin.it/bJFdchozQ');"></div>
             <div class="sobre-conteudo">
-                <p class="sobre-texto">
-                    [Escreva aqui a sua sinopse. Este é o espaço perfeito para contar um pouco sobre sua trajetória, o que motiva suas críticas, seus gêneros favoritos na literatura, nos cinemas e nos videogames. Você pode usar este espaço para se conectar intimamente com seu leitor e explicar a filosofia por trás da citação "O mundo mente quando ouve falar de esperança".]
-                </p>
-                <p class="sobre-texto">
-                    [Você pode adicionar um segundo parágrafo aqui para separar as ideias, focando em como você organiza suas leituras e assiste aos filmes antes de analisá-los no blog.]
-                </p>
-                
+                <p class="sobre-texto">Sou Edward, um apaixonado por histórias que desafiam a mente e tocam a alma. Aqui neste espaço, compartilho minhas análises sobre obras que me marcaram — sejam livros, filmes ou séries que vão além do entretenimento.</p>
+                <p class="sobre-texto">Acredito que a verdadeira arte nos confronta, nos transforma e, às vezes, nos assombra. E é nesse assombro que encontramos as respostas mais sinceras sobre nós mesmos.</p>
                 <div class="redes-sociais">
-                    <a href="URL_DO_SEU_OPENLIBRARY" target="_blank" class="btn-social">OpenLibrary</a>
-                    <a href="URL_DO_SEU_LETTERBOXD" target="_blank" class="btn-social">Letterboxd</a>
-                    <a href="URL_DO_SEU_BACKLOGGD" target="_blank" class="btn-social">Backloggd</a>
+                    <a href="#" target="_blank" class="btn-social">📚 OpenLibrary</a>
+                    <a href="#" target="_blank" class="btn-social">🎬 Letterboxd</a>
+                    <a href="#" target="_blank" class="btn-social">🎮 Backloggd</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- RODAPÉ -->
     <footer>
         <div class="container">
             <p>&copy; 2026 Edward's Insight. Feito para os amantes da arte.</p>
         </div>
     </footer>
 
+    <script>
+        // Menu mobile toggle simples
+        document.querySelector('.menu-toggle')?.addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
