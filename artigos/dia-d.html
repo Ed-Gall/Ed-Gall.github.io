@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia D | Edward's Insight</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+        .artigo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* REMOVER O HEADER STICKY */
+        .artigo-page header {
+            position: relative !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            background: var(--bg-principal) !important;
+            border-bottom: 1px solid var(--borda);
+        }
+
+        
+        .artigo-page .artigo-container {
+            padding-top: 2rem;
+        }
+
+        .artigo-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .artigo-titulo {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -0.03em;
+        }
+
+        .artigo-capa {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+            border: 1px solid var(--borda);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .artigo-capa::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 60%, rgba(10, 10, 12, 0.6));
+        }
+
+        .artigo-corpo {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: #d1d5db;
+        }
+
+        .artigo-corpo p {
+            margin-bottom: 1.8rem;
+        }
+
+        .artigo-corpo p:first-of-type::first-letter {
+            font-size: 4rem;
+            float: left;
+            margin-right: 0.5rem;
+            line-height: 1;
+            font-weight: 700;
+            color: var(--sotaque);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .artigo-corpo blockquote {
+            border-left: 4px solid var(--sotaque);
+            padding-left: 1.8rem;
+            margin: 2.5rem 0;
+            font-style: italic;
+            color: var(--texto-secundario);
+            font-size: 1.2rem;
+            background: var(--glass-bg);
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            border-left-width: 4px;
+        }
+
+        .artigo-corpo blockquote::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--sotaque);
+            opacity: 0.3;
+            margin-right: 0.5rem;
+        }
+
+        .artigo-corpo h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .artigo-corpo ul, .artigo-corpo ol {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+            color: var(--texto-secundario);
+        }
+
+        .artigo-corpo li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Botão de voltar */
+        .artigo-voltar {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--borda);
+            text-align: center;
+        }
+
+        .artigo-voltar .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .artigo-titulo {
+                font-size: 2.2rem;
+            }
+            .artigo-capa {
+                height: 250px;
+            }
+            .artigo-container {
+                padding: 1rem 1rem;
+            }
+            .artigo-page .artigo-container {
+                padding-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="artigo-page">
+
+    <header>
+        <div class="container nav-container">
+            <div class="header-brand">
+                <a href="../index.html" class="logo">Edward's <span>Insight</span></a>
+                <span class="citacao">"O mundo mente quando ouve falar de esperança"</span>
+            </div>
+            <nav class="menu">
+                <a href="../index.html#filmes">Filme</a>
+                <a href="../index.html#series">Série</a>
+                <a href="../index.html#livros">Livro</a>
+                <a href="../index.html#quem-sou-eu">Quem eu sou</a>
+            </nav>
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="artigo-container">
+        <header class="artigo-header">
+            <span class="tag">Livro</span>
+            <h1 class="artigo-titulo">Dia D(e comer cimento)</h1>
+            <div class="meta">
+                <span>Por Edward</span> • <span>17 de Junho, 2026</span> • <span class="nota">★ 7/10</span>
+            </div>
+        </header>
+
+        <div class="artigo-capa" style="background-image: url('https://m.media-amazon.com/images/M/MV5BZDMzMDNiZDItYmM2MC00ZWEzLTliZDAtMGZjNTE2ZjVjYmJkXkEyXkFqcGc@._V1_FMjpg_UX1');"></div>
+
+        <article class="artigo-corpo">
+            <h2>Novembro de 2022</h2>
+
+            <p>Lembro que era um domingo nublado. Apesar do céu fechado, o ar estava abafado e eu sentia uma estranha falta de ar. A respiração pesada e o cansaço tornavam cada minuto diante do computador mais cansativo, até que decidi abandonar tudo o que estava fazendo e simplesmente descansar.</p>
+
+            <p>Para mim, descansar quase sempre significa assistir a um filme. E os domingos, ao menos na minha imaginação, sempre pedem uma boa aventura. Nada parecia mais apropriado do que recorrer a Steven Spielberg, cineasta que talvez melhor compreenda esse sentimento de maravilhamento característico do gênero. Foi assim que conheci Contatos Imediatos do Terceiro Grau.</p>
+
+            <p>Essa lembrança não é um detalhe irrelevante. Considero Contatos Imediatos do Terceiro Grau o filme que tornou explícito para mim aquilo que Spielberg busca em suas narrativas sobre alienígenas. Historicamente, assim como acontece com grande parte da ficção científica, filmes de invasão extraterrestre raramente são apenas sobre extraterrestres. Eles funcionam como espelhos que refletem as ansiedades, esperanças e contradições da sociedade que os produz.</p>
+
+            <p>Em Contatos Imediatos do Terceiro Grau, percebe-se um otimismo característico do período pós-guerra, no qual o pacifismo, transcendência e propósito ocupam o centro da narrativa. O protagonista é tomado por um chamado quase místico: uma visão que se transforma em obsessão, uma espécie de vocação religiosa que o conduz a uma peregrinação em direção à montanha sagrada. É ali, envolta por luzes, que finalmente se revelarão os seres benevolentes para anunciar uma promessa de união universal. Esse detalhe é interessante porque voltaria a reverberar décadas depois em Dia D, essa convocação por algo maior do que os próprios personagens.</p>
+
+            <h2>Junho de 2026</h2>
+
+            <p>O que você faria se descobrisse, neste exato momento, que a vida extraterrestre existe? Mais do que isso: e se estivesse em suas mãos o poder de revelar essa verdade ao mundo? Você o faria? Quais seriam as consequências? Estamos realmente preparados para lidar com uma revelação dessa magnitude? Somos capazes de encarar o desconhecido sem que nossas estruturas sociais, religiosas e filosóficas entrem em colapso?</p>
+
+            <p>É a partir dessa premissa que Dia D, de Steven Spielberg, constrói sua narrativa. O filme acompanha um especialista em segurança digital e uma repórter que se veem diante de uma verdade impossível de ignorar: a vida extraterrestre existe e uma organização privada, financiada pelo governo, dedica-se há décadas a ocultar essa informação da população.</p>
+
+            <p>Não acredito que seja necessário me alongar sobre a direção de Spielberg. Um mestre continua sendo um mestre, mesmo em seus filmes medíocres. Se há algo que me incomodou foi o uso excessivo de lens flare, uma insistência visual em reforçar a todo momento a grandiosidade e a estranheza do fenômeno alienígena. Fora isso, Spielberg permanece em plena forma. A fotografia de Janusz Kamiński é precisa, enquanto a trilha sonora de John Williams cumpre com competência o papel de amplificar o fascínio e a tensão que permeia a história. Se eu continuasse por esse caminho, acabaria apenas rasgando elogios. Mas não desejo nem tenho prioridade para falar sobre os méritos técnicos do longa. O que realmente me interessa em Dia D está em outro lugar. Está nas perguntas que o filme faz e nas inquietações que ele provoca.</p>
+
+            <h2>Assim na Terra como no... Céu?</h2>
+
+            <p>O contexto em que a história se desenrola é o de um mundo tomado pela ansiedade diante da possibilidade de uma Terceira Guerra Mundial. Vivemos, dentro da narrativa, em uma sociedade exausta, onde a apatia se espalha como um vírus e o cotidiano é marcado pelo bombardeio incessante de imagens de morte, caos e destruição. É curioso que a primeira cena do filme nos confronte frontalmente com esse espetáculo da violência.</p>
+
+            <p>Há algo de ingênuo, até infantil, na forma como o filme lida com sua própria premissa. Esperado de uma produção do Spielberg, mas que aqui em particular, me incomodou. No papel, a proposta é fascinante! Explorar as consequências sociais, políticas e religiosas da descoberta de vida extraterrestre. Entretanto, a narrativa parece hesitar sempre que se aproxima de questões mais espinhosas. Em diversos momentos, o filme evita confrontar instituições específicas ou assumir uma posição sobre os temas que ele mesmo levanta, prefere manter-se neutro a tudo.</p>
+
+            <p>O resultado é que, muito rapidamente, somos afastados daquela sociedade inicialmente apresentada. O conflito central deixa de ser o de uma humanidade inteira lidando com uma verdade capaz de redefinir sua compreensão do universo e passa a ser o de um pequeno grupo de indivíduos tentando compreender, aos poucos, o significado dessa revelação. Não há nada de errado nessa escolha em si, mas ela reduz significativamente o alcance das questões que o filme parecia disposto a explorar.</p>
+
+            <p>O filme até apresenta problemas contemporâneos, mas parece antiquado tanto nas respostas que oferece quanto na maneira como os representa em tela. Essa distância entre a premissa e sua execução acabou tornando aquela realidade artificial para mim. Em um mundo marcado pela pós-verdade, pela influência das redes sociais, pelo avanço das inteligências artificiais e pelo crescimento dos fanatismos de toda ordem, é estranho que o filme passe tão longe dessas questões quando o que está em cheque é a importância da verdade. A descoberta da existência de vida extraterrestre deveria atravessar inevitavelmente esses fenômenos, amplificando conflitos políticos, radicalismos ideológicos e alienação coletiva. No entanto, quase nada disso está presente.</p>
+
+            <p>Embora a narrativa insista em afirmar que estamos diante de uma sociedade à beira do colapso, raramente somos levados a sentir essa decadência. Existem poucas cenas dedicadas a retratar esse mundo pré-guerra e, quando elas aparecem, soam mais como uma representação superficial do caos do que como uma experiência vivida. Falta atmosfera... Pega por exemplo Guerra dos Mundos, naquele filme, Spielberg consegue transmitir de maneira visceral a percepção de um desastre global. Sentimos o medo, a confusão e o colapso das estruturas sociais.</p>
+
+            <h2>Por fim, vinde a mim</h2>
+
+            <p>As melhores ideias do filme acabam concentradas em seu primeiro ato. É nesse momento que a narrativa ainda não teve tempo de desenvolver plenamente seus temas e, por isso mesmo, consegue despertar fascínio ao lançar conceito após conceito diante do espectador. O problema é que grande parte dessas ideias jamais recebe o aprofundamento que parecia prometer.</p>
+
+            <p>No fim das contas, fica claro que a principal preocupação de Spielberg não está na discussão sobre a verdade, mas na defesa da empatia. Como em outras de suas obras sobre alienígenas, retornam os seres benevolentes que funcionam quase como uma força divina, portadores de uma mensagem de reconciliação e esperança para a humanidade. Mais uma vez, alguns indivíduos são escolhidos para atender a um chamado proféticos, convocados a peregrinação. Surge então a figura do <b>Outro</b>, aquele capaz de compreender os alienígenas e aquele capaz de nos compreender, dois que são um.</p>
+
+            <p>Então, justamente quando o filme parece se aproximar de um clímax capaz de romper a monotonia que domina boa parte de sua segunda metade, ele simplesmente termina. A sensação final é a de uma obra que constantemente promete mais do que entrega. Quando finalmente parece preparada para enfrentar as consequências de suas próprias ideias, o filme acaba.</p>
+
+            <p>Ainda assim, é inegavelmente um filme de Spielberg. Mesmo diante dos meus incômodos, foi uma experiência que gostei de ter vivido, ainda que ela nunca alcance o potencial sugerido por sua premissa. O que mais me frustra é perceber que, apesar de se apresentar como uma reflexão sobre questões contemporâneas, Dia D mantém uma distância considerável dos problemas e das ferramentas que definem o nosso tempo. Resta apenas a impressão de uma obra fascinada por grandes perguntas, mas excessivamente cautelosa diante das respostas.</p>
+
+        </article>
+
+        <div class="artigo-voltar">
+            <a href="../index.html" class="btn">← Voltar para o início</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Edward's Insight. Feito para os amantes da arte.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile toggle
+        document.querySelector('.menu-toggle')?.addEventListener('click', function() {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
