@@ -3,27 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#09090b">
+    <meta name="description" content="Arquivo de críticas e ensaios do Edward's Insight.">
     <title>Todas as Publicações | Edward's Insight</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="feed-page">
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <div class="ambient-glow" aria-hidden="true"></div>
 
-    <header>
+    <header class="site-header">
         <div class="container nav-container">
             <div class="header-brand">
-                <a href="index.html" class="logo">Edward's <span>Insight</span></a>
-                <span class="citacao">"O mundo mente quando ouve falar de esperança"</span>
+                <a href="index.html" class="logo" aria-label="Edward's Insight — página inicial">
+                    Edward's <span>Insight</span>
+                </a>
+                <span class="citacao">“O mundo mente quando ouve falar de esperança”</span>
             </div>
-            <nav class="menu">
-                <a href="publicacoes.html?tag=filme">Filme</a>
-                <a href="publicacoes.html?tag=serie">Série</a>
-                <a href="publicacoes.html?tag=livro">Livro</a>
+
+            <nav class="menu" id="menu-principal" aria-label="Navegação principal">
+                <a href="publicacoes.html?tag=filme" data-nav-tag="filme">Filmes</a>
+                <a href="publicacoes.html?tag=serie" data-nav-tag="serie">Séries</a>
+                <a href="publicacoes.html?tag=livro" data-nav-tag="livro">Livros</a>
                 <a href="index.html#quem-sou-eu">Quem eu sou</a>
             </nav>
-            <button class="menu-toggle" aria-label="Abrir Menu">
+
+            <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="menu-principal" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -31,115 +39,172 @@
         </div>
     </header>
 
-    <main class="container secao-conteudo">
-        <div class="secao-header">
-            <h2 class="secao-titulo">Todas as Publicações</h2>
-            <a href="index.html" class="secao-link">← Voltar ao Início</a>
-        </div>
-        
-        <div class="grid-criticas">
+    <main id="conteudo">
+        <section class="archive-hero">
+            <div class="container">
+                <a href="index.html" class="breadcrumb"><span aria-hidden="true">←</span> Página inicial</a>
+                <div class="archive-heading">
+                    <div>
+                        <p class="eyebrow"><span></span> Arquivo editorial</p>
+                        <h1 class="archive-title">Todas as publicações</h1>
+                        <p class="archive-description">Críticas, ensaios e impressões sobre as histórias que permanecem depois dos créditos — ou da última página.</p>
+                    </div>
+                    <span class="archive-count" aria-label="3 publicações"><strong>03</strong> textos</span>
+                </div>
+            </div>
+        </section>
 
-            <article class="card" data-tag="filme">
-                <a href="artigos/dia-d.html">
-                    <div class="card-img" style="background-image: url('https://m.media-amazon.com/images/M/MV5BZDMzMDNiZDItYmM2MC00ZWEzLTliZDAtMGZjNTE2ZjVjYmJkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg');">
-                        <span class="card-tag">Filme</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-titulo">Dia D(e comer cimento)</h3>
-                        <p class="card-resumo">Uma análise sobre o melhor livro do Stephen King.</p>
-                        <div class="card-footer">
-                            <span class="nota">★ 7/10</span>
-                            <span class="card-data">17 Jun 2026</span>
-                        </div>
-                    </div>
-                </a>
-            </article>
-            
-            <article class="card" data-tag="livro">
-                <a href="artigos/it-serie.html">
-                    <div class="card-img" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFKUwnUkqNeAth1HgjTE02t_tDlfTXIJB0loju9uPDyCNITVh2ySRMK10zmA19sbYZz03EWnmIUHeQOFtm_yA51IrLAlcfj9njVxH4b0obHz_Ozd2uHpbK78REOrAnr-iMw5kouBTcJn1EtJ16XWh7wxf2cvPBUgOrG4vjLDAB_hctxl1NTqbbFlYAZB8S/s1600/1000033085.jpg');">
-                        <span class="card-tag">Livro</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-titulo">It: A Coisa; ou Medo e Nossa Pequena Luz no Cosmos</h3>
-                        <p class="card-resumo">Uma análise sobre o melhor livro do Stephen King.</p>
-                        <div class="card-footer">
-                            <span class="nota">★ 10/10</span>
-                            <span class="card-data">21 Jan 2026</span>
-                        </div>
-                    </div>
-                </a>
-            </article>
+        <section class="container archive-content" aria-labelledby="titulo-feed">
+            <div class="archive-toolbar">
+                <h2 class="sr-only" id="titulo-feed">Lista de publicações</h2>
+                <div class="filter-list" aria-label="Filtrar publicações">
+                    <a href="publicacoes.html" class="filter-chip" data-filter="todas">Todas</a>
+                    <a href="publicacoes.html?tag=filme" class="filter-chip" data-filter="filme">Filmes</a>
+                    <a href="publicacoes.html?tag=serie" class="filter-chip" data-filter="serie">Séries</a>
+                    <a href="publicacoes.html?tag=livro" class="filter-chip" data-filter="livro">Livros</a>
+                </div>
+                <p class="filter-status" aria-live="polite">Mostrando todas as publicações</p>
+            </div>
 
-            <article class="card" data-tag="livro">
-                <a href="artigos/horror-em-amarelo.html">
-                    <div class="card-img" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFDnD8z67GGnF-s6hKpj_prEW8hQm7ewB-X1jtVSBGwHzGWJQbJ6jT2U1hAUmMNIXkS3K8GuqwLOHyX2R-pKJ4xU77IoP63W0wJTDqHqoehyb1eLx3AXzcw4Y2yngd91Ul8_TxpV7jS0K-itjn5jR6amAvORm_9KVlvcJJZdZ10aA51wvpXo13y38NTB_N/s1536/1000198270.png');">
-                        <span class="card-tag">Livro</span>
-                    </div>
-                    <div class="card-content">
-                        <h3 class="card-titulo">O Horror em Amarelo</h3>
-                        <p class="card-resumo">Há exatamente um ano, eu fui amaldiçoado.</p>
-                        <div class="card-footer">
-                            <span class="nota">★ 10/10</span>
-                            <span class="card-data">19 Out 2025</span>
+            <div class="grid-criticas archive-grid">
+                <article class="card" data-tag="filme">
+                    <a href="artigos/dia-d.html" class="card-link">
+                        <div class="card-img" style="background-image: url('https://m.media-amazon.com/images/M/MV5BZDMzMDNiZDItYmM2MC00ZWEzLTliZDAtMGZjNTE2ZjVjYmJkXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg');">
+                            <span class="card-tag">Filme</span>
+                            <span class="card-arrow" aria-hidden="true">↗</span>
                         </div>
-                    </div>
-                </a>
-            </article>
+                        <div class="card-content">
+                            <h3 class="card-titulo">Dia D(e comer cimento)</h3>
+                            <p class="card-resumo">Uma análise sobre o melhor livro do Stephen King.</p>
+                            <div class="card-footer">
+                                <span class="nota">★ 7/10</span>
+                                <time class="card-data" datetime="2026-06-17">17 Jun 2026</time>
+                            </div>
+                        </div>
+                    </a>
+                </article>
 
-        </div> 
+                <article class="card" data-tag="livro">
+                    <a href="artigos/it-serie.html" class="card-link">
+                        <div class="card-img" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgFKUwnUkqNeAth1HgjTE02t_tDlfTXIJB0loju9uPDyCNITVh2ySRMK10zmA19sbYZz03EWnmIUHeQOFtm_yA51IrLAlcfj9njVxH4b0obHz_Ozd2uHpbK78REOrAnr-iMw5kouBTcJn1EtJ16XWh7wxf2cvPBUgOrG4vjLDAB_hctxl1NTqbbFlYAZB8S/s1600/1000033085.jpg');">
+                            <span class="card-tag">Livro</span>
+                            <span class="card-arrow" aria-hidden="true">↗</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-titulo">It: A Coisa; ou Medo e Nossa Pequena Luz no Cosmos</h3>
+                            <p class="card-resumo">Uma análise sobre o melhor livro do Stephen King.</p>
+                            <div class="card-footer">
+                                <span class="nota">★ 10/10</span>
+                                <time class="card-data" datetime="2026-01-21">21 Jan 2026</time>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="card" data-tag="livro">
+                    <a href="artigos/horror-em-amarelo.html" class="card-link">
+                        <div class="card-img" style="background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiFDnD8z67GGnF-s6hKpj_prEW8hQm7ewB-X1jtVSBGwHzGWJQbJ6jT2U1hAUmMNIXkS3K8GuqwLOHyX2R-pKJ4xU77IoP63W0wJTDqHqoehyb1eLx3AXzcw4Y2yngd91Ul8_TxpV7jS0K-itjn5jR6amAvORm_9KVlvcJJZdZ10aA51wvpXo13y38NTB_N/s1536/1000198270.png');">
+                            <span class="card-tag">Livro</span>
+                            <span class="card-arrow" aria-hidden="true">↗</span>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-titulo">O Horror em Amarelo</h3>
+                            <p class="card-resumo">Há exatamente um ano, eu fui amaldiçoado.</p>
+                            <div class="card-footer">
+                                <span class="nota">★ 10/10</span>
+                                <time class="card-data" datetime="2025-10-19">19 Out 2025</time>
+                            </div>
+                        </div>
+                    </a>
+                </article>
+            </div>
+
+            <div class="empty-state" hidden>
+                <span class="empty-symbol" aria-hidden="true">✦</span>
+                <h2>Nenhuma publicação por aqui — ainda.</h2>
+                <p>Esta categoria aguarda sua primeira história.</p>
+                <a href="publicacoes.html" class="secao-link">Ver todas as publicações →</a>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2026 Edward's Insight.</p>
+        <div class="container footer-content">
+            <a href="index.html" class="footer-logo">Edward's Insight</a>
+            <p>&copy; 2026. Críticas, ensaios e pequenas obsessões.</p>
         </div>
     </footer>
 
     <script>
-        // Menu mobile toggle simples
-        document.querySelector('.menu-toggle')?.addEventListener('click', function() {
-            document.querySelector('.menu').classList.toggle('active');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+
+        function closeMenu() {
+            menu?.classList.remove('active');
+            menuToggle?.classList.remove('active');
+            menuToggle?.setAttribute('aria-expanded', 'false');
+            menuToggle?.setAttribute('aria-label', 'Abrir menu');
+        }
+
+        menuToggle?.addEventListener('click', () => {
+            const isOpen = menu?.classList.toggle('active');
+            menuToggle.classList.toggle('active', isOpen);
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
         });
 
-        // ==========================================
-        // SISTEMA DE FILTRO POR TAGS
-        // ==========================================
+        menu?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape') closeMenu();
+        });
+
         window.addEventListener('DOMContentLoaded', () => {
-            // Pega o parâmetro '?tag=' da URL
-            const urlParams = new URLSearchParams(window.location.search);
-            const tagFiltro = urlParams.get('tag');
+            const params = new URLSearchParams(window.location.search);
+            const tag = params.get('tag');
+            const validTags = ['filme', 'serie', 'livro'];
+            const activeFilter = validTags.includes(tag) ? tag : 'todas';
+            const labels = { filme: 'filmes', serie: 'séries', livro: 'livros' };
+            const cards = [...document.querySelectorAll('.card[data-tag]')];
+            const title = document.querySelector('.archive-title');
+            const description = document.querySelector('.archive-description');
+            const status = document.querySelector('.filter-status');
+            const count = document.querySelector('.archive-count strong');
+            const grid = document.querySelector('.archive-grid');
+            const emptyState = document.querySelector('.empty-state');
 
-            if (tagFiltro) {
-                // Atualiza o título da página para mostrar o que está sendo filtrado
-                const titulo = document.querySelector('.secao-titulo');
-                // Coloca a primeira letra maiúscula (ex: "Livro")
-                const tagFormatada = tagFiltro.charAt(0).toUpperCase() + tagFiltro.slice(1);
-                
-                // Trata o plural dependendo da tag
-                let plural = tagFiltro === 'filme' || tagFiltro === 'livro' ? 's' : '';
-                titulo.textContent = `Publicações: ${tagFormatada}${plural}`;
+            document.querySelectorAll('.filter-chip').forEach(chip => {
+                const isActive = chip.dataset.filter === activeFilter;
+                chip.classList.toggle('active', isActive);
+                if (isActive) chip.setAttribute('aria-current', 'page');
+            });
 
-                // Pega todos os cards e esconde os que não batem com a tag
-                const cards = document.querySelectorAll('.card');
-                let encontrouResultados = false;
+            document.querySelectorAll('[data-nav-tag]').forEach(link => {
+                if (link.dataset.navTag === activeFilter) link.setAttribute('aria-current', 'page');
+            });
 
-                cards.forEach(card => {
-                    if (card.getAttribute('data-tag') === tagFiltro) {
-                        card.style.display = 'block'; // Mostra
-                        encontrouResultados = true;
-                    } else {
-                        card.style.display = 'none'; // Esconde
-                    }
-                });
+            const visibleCards = cards.filter(card => {
+                const shouldShow = activeFilter === 'todas' || card.dataset.tag === activeFilter;
+                card.hidden = !shouldShow;
+                return shouldShow;
+            });
 
-                // Se não tiver nenhum artigo daquela tag, mostra uma mensagem elegante
-                if (!encontrouResultados) {
-                    const grid = document.querySelector('.grid-criticas');
-                    grid.style.display = 'block'; // Tira o grid temporariamente para a mensagem não ficar espremida
-                    grid.innerHTML = `<p style="color: var(--texto-secundario); font-size: 1.1rem; text-align: center; padding: 3rem 0;">Ainda não há publicações nesta categoria. Volte em breve!</p>`;
-                }
+            const amount = visibleCards.length;
+            count.textContent = String(amount).padStart(2, '0');
+            document.querySelector('.archive-count').setAttribute('aria-label', `${amount} ${amount === 1 ? 'publicação' : 'publicações'}`);
+
+            if (activeFilter !== 'todas') {
+                const category = labels[activeFilter];
+                title.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+                description.textContent = `Todas as publicações da categoria ${category}, reunidas em um só lugar.`;
+                status.textContent = `Mostrando ${amount} ${amount === 1 ? 'publicação' : 'publicações'} em ${category}`;
+                document.title = `${title.textContent} | Edward's Insight`;
+            } else {
+                status.textContent = `Mostrando ${amount} ${amount === 1 ? 'publicação' : 'publicações'}`;
             }
+
+            const hasResults = amount > 0;
+            grid.hidden = !hasResults;
+            emptyState.hidden = hasResults;
         });
     </script>
 </body>
